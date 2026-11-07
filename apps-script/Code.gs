@@ -5,7 +5,7 @@
  * Ganti NOTIFICATION_EMAIL sebelum deploy.
  */
 
-const NOTIFICATION_EMAIL = 'GANTI_DENGAN_EMAIL_TUJUAN';
+const NOTIFICATION_EMAIL = 'rabbanimaulana40@gmail.com';
 const SHEET_NAME = 'Pengunjung';
 
 function doGet() {
