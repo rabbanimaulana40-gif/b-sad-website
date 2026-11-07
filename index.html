@@ -297,7 +297,13 @@
      <div data-template-id="form-panel" class="canva-panel rounded-3xl bg-[#f7f4e9] p-6 sm:p-9 shadow-2xl" style="background: rgb(247, 244, 233);">
       <h3 data-template-id="form-title" class="canva-text text-[#173e32]" style="color: rgb(23, 62, 50); font-weight: 600; font-style: normal; font-size: 19px;">Hubungi Tim BISA</h3>
       <p data-template-id="form-copy" class="canva-text mt-2 mb-7 leading-relaxed text-[#536a5c]" style="color: rgb(83, 106, 92); font-weight: 400; font-style: normal; font-size: 16px;">Pesan Anda akan disimpan untuk ditinjau tim.</p>
-      <form id="contact-form">
+     <form id="contact-form"
+      action="https://formsubmit.co/rabbanimaulana40@gmail.com"
+      method="POST">
+<input type="hidden" name="_subject"
+       value="Pesan Baru dari Website B-SAD">
+<input type="text" name="_honey"
+       style="display:none" tabindex="-1" autocomplete="off">
        <div class="space-y-5">
         <div>
          <label for="nama" data-template-id="name-label" class="canva-text block mb-2 font-semibold text-[#173e32]" style="color: rgb(23, 62, 50); font-weight: 600; font-style: normal; font-size: 16px;">Nama</label><input id="nama" name="nama" type="text" autocomplete="name" maxlength="100" required="" class="field">
@@ -474,38 +480,6 @@
       pyroItem.disabled = false; pyroItem.classList.remove('selected'); pyroZone.textContent = '🔥 Seret ke alat pemanas';
       material('🥬', 'Sayur basah', 'Mulai dari limbah sayuran yang dipilah di sumbernya.');
       showStage(0);
-    });
-
-    const form = $('contact-form');
-    const submit = $('submit-button');
-    const status = $('form-status');
-    let ready = false;
-    function formMessage(message, error) {
-      status.textContent = message;
-      status.style.color = error ? '#a53524' : '#256044';
-    }
-    async function initialize() {
-      try {
-        const result = await window.dataSdk.init({onDataChanged() {}});
-        ready = result.isOk;
-        if (!ready) formMessage('Formulir belum tersedia. Silakan coba lagi nanti.', true);
-      } catch (_) { formMessage('Formulir belum tersedia. Silakan coba lagi nanti.', true); }
-    }
-    form.addEventListener('submit', async event => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      if (!ready) { formMessage('Belum dapat mengirim pesan. Silakan coba lagi nanti.', true); return; }
-      const nama = $('nama').value.trim(), email = $('email').value.trim(), pesan = $('pesan').value.trim();
-      if (!nama || !email || !pesan) { formMessage('Mohon isi semua kolom sebelum mengirim.', true); return; }
-      submit.disabled = true;
-      submit.setAttribute('aria-busy', 'true');
-      formMessage('Mengirim pesan…', false);
-      try {
-        const result = await window.dataSdk.create({nama, email, pesan, created_at:new Date().toISOString()});
-        if (result.isOk) { form.reset(); formMessage('Pesan berhasil dikirim. Terima kasih!', false); }
-        else formMessage('Pesan belum berhasil dikirim. Silakan coba lagi.', true);
-      } catch (_) { formMessage('Pesan belum berhasil dikirim. Silakan coba lagi.', true); }
-      finally { submit.disabled = false; submit.removeAttribute('aria-busy'); }
     });
     const explorerData={electrode:['Biochar Electrode','🖤','Material aktif berbahan biochar hasil pengolahan limbah sayur yang menyimpan muatan energi.'],separator:['Separator','▤','Lapisan pemisah yang menjaga kedua elektroda agar tidak bersentuhan langsung.'],electrolyte:['Electrolyte','💧','Larutan yang menjadi media perpindahan ion dalam sistem superkapasitor.'],collector:['Conductive Collector','⚡','Penghantar yang membantu menghubungkan elektroda dengan rangkaian listrik.'],casing:['Protective Casing','⬡','Pelindung komponen internal agar prototipe tersusun dan terlindungi.']};
     const explored=new Set(), explorerParts=['electrode','separator','electrolyte','collector','casing'];
