@@ -357,13 +357,14 @@
         contactPending = false;
         contactButton.disabled = false;
         contactButton.textContent = 'Kirim pesan';
-        contactStatus.textContent = 'Pesan berhasil dikirim ke E-Mail Tim';
-        contactStatus.style.color = '#276243';
-      }, 2000);
+        contactStatus.textContent = 'Belum menerima konfirmasi dari server. Periksa Google Sheets dan Gmail sebelum mencoba mengirim ulang.';
+        contactStatus.style.color = '#a53524';
+      }, 25000);
     });
 
     window.addEventListener('message', event => {
-      if (event.source !== contactFrame.contentWindow) return;
+      // Apps Script dapat membungkus halaman respons dalam frame internal;
+      // karena itu jangan mensyaratkan event.source sama dengan iframe terluar.
       if (!event.data || event.data.type !== 'bsad-contact-result') return;
 
       clearTimeout(contactTimeout);
