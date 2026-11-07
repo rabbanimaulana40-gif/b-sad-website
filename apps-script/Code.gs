@@ -99,7 +99,7 @@ function responseToForm(result) {
 <head><meta charset="utf-8"></head>
 <body>
 <script>
-  window.parent.postMessage({
+  window.top.postMessage({
     type: 'bsad-contact-result',
     result: ${payload}
   }, '*');
