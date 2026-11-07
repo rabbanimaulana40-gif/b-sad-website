@@ -481,30 +481,6 @@
       material('🥬', 'Sayur basah', 'Mulai dari limbah sayuran yang dipilah di sumbernya.');
       showStage(0);
     });
-    const form = $('contact-form');
-const status = $('form-status');
-
-form.addEventListener('submit', event => {
-  event.preventDefault();
-
-  if (!form.reportValidity()) return;
-
-  const nama = $('nama').value.trim();
-  const email = $('email').value.trim();
-  const pesan = $('pesan').value.trim();
-
-  const tujuan = 'rabbanimaulana40@gmail.com';
-
-  const subject = encodeURIComponent('Pesan Baru dari Website B-SAD');
-  const body = encodeURIComponent(
-    `Nama: ${nama}\nEmail: ${email}\n\nPesan:\n${pesan}`
-  );
-
-  status.textContent = 'Membuka aplikasi email...';
-
-  window.location.href =
-    `mailto:${tujuan}?subject=${subject}&body=${body}`;
-});
     const explorerData={electrode:['Biochar Electrode','🖤','Material aktif berbahan biochar hasil pengolahan limbah sayur yang menyimpan muatan energi.'],separator:['Separator','▤','Lapisan pemisah yang menjaga kedua elektroda agar tidak bersentuhan langsung.'],electrolyte:['Electrolyte','💧','Larutan yang menjadi media perpindahan ion dalam sistem superkapasitor.'],collector:['Conductive Collector','⚡','Penghantar yang membantu menghubungkan elektroda dengan rangkaian listrik.'],casing:['Protective Casing','⬡','Pelindung komponen internal agar prototipe tersusun dan terlindungi.']};
     const explored=new Set(), explorerParts=['electrode','separator','electrolyte','collector','casing'];
     function explorePart(part){const item=explorerData[part];if(!item)return;explored.add(part);document.querySelectorAll('.explorer-layer').forEach(el=>el.classList.toggle('is-highlighted',el.dataset.part===part));document.querySelectorAll('[data-explorer-part]').forEach(el=>el.classList.toggle('is-active',el.dataset.explorerPart===part));$('explorer-name').textContent=item[0];$('explorer-support').textContent=item[1];$('explorer-function').textContent=item[2];$('explorer-progress').textContent=`${explored.size} of 5 Components Explored`;}
