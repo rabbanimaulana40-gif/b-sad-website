@@ -1,0 +1,155 @@
+/* Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0b0b0e;
+    color: #e1e1e1;
+    line-height: 1.6;
+}
+
+/* Navigasi Header */
+header {
+    background-color: #15151e;
+    color: #fff;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #e10600;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #e10600;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e10600;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(11, 11, 14, 0.85), rgba(21, 21, 30, 0.9)), 
+                url('https://picsum.photos/1200/500?random=10') center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 90px 20px;
+    border-bottom: 2px dashed #38383f;
+}
+
+.badge {
+    background: #e10600;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Kartu Profil F1 Style */
+.profil-card {
+    background: #15151e;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 6px solid #e10600;
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.15);
+}
+
+.profil-card h3 {
+    margin-bottom: 12px;
+    color: #e10600;
+}
+
+.profil-card p {
+    margin-bottom: 8px;
+}
+
+/* Grid Galeri */
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.foto-item {
+    background: #15151e;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2a2a35;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.foto-item:hover {
+    transform: translateY(-5px);
+    border-color: #e10600;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.foto-item p {
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #15151e;
+    color: #888;
+    margin-top: 50px;
+    border-top: 1px solid #2a2a35;
+}
