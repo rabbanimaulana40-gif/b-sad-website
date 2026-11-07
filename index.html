@@ -348,18 +348,10 @@
     contactForm.addEventListener('submit', () => {
       contactPending = true;
       contactButton.disabled = true;
-      contactButton.textContent = 'Mengirim...';
-      contactStatus.textContent = 'Mengirim pesan. Mohon tunggu...';
-      contactStatus.style.color = '#536a5c';
+      contactButton.textContent = 'Terkirim';
+      contactStatus.textContent = 'Berhasil dikirim! Terima kasih telah menghubungi Tim B-SAD.';
+      contactStatus.style.color = '#276243';
       clearTimeout(contactTimeout);
-      contactTimeout = setTimeout(() => {
-        if (!contactPending) return;
-        contactPending = false;
-        contactButton.disabled = false;
-        contactButton.textContent = 'Kirim pesan';
-        contactStatus.textContent = 'Terima kasih! Permintaan pengiriman pesan sudah dikirim. Tim B-SAD akan menindaklanjutinya.';
-        contactStatus.style.color = '#276243';
-      }, 2000);
     });
 
     window.addEventListener('message', event => {
